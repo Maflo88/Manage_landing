@@ -1,0 +1,136 @@
+.testimony{
+    position: relative;
+    text-align: center;
+    margin: 0 auto; 
+
+    @include breakpoint-down(small){
+        max-width: 69.375rem; //1110px
+    }
+
+    @include breakpoint-up(medium){
+        padding: 0rem 0rem 3.75rem 0rem; //60px
+    }
+
+    h2{
+        color: $darkBlue;
+
+    }
+
+    &__slider{
+        margin-bottom: 3.125rem; //50px
+        cursor: grab;
+
+        @include breakpoint-up(large){
+            width: 100%;
+            height: 100%;
+        }
+
+        .animate { 
+            transition: transform 0.3s ease-out; 
+        }
+
+        .slider-nav {
+            text-align: center;
+            margin: 0.625rem 0 0 0; //10px
+          }
+          .slider-nav a {
+            width: 0.5rem; //8px
+            height: 0.5rem;
+            display: inline-block;
+            background: white;
+            border: solid 1px $brightRed;
+            overflow: hidden;
+            border-radius: 50%;
+          }
+          .slider-nav a.active {
+            background: $brightRed;
+          }
+    }
+
+
+    &__content{
+        width: 100%; //328px
+        height: 21.75rem; //348px
+        position: relative;
+        margin-top: 3.125rem; //50px
+
+        @include breakpoint-up(medium){
+            height: 19.125rem; //258px
+        }
+
+        @include breakpoint-up(large){
+            height: 17.125rem; //258px   
+        }
+
+        img{
+            width: 4.5625rem; //73px
+            height: 4.5625rem;
+            margin-bottom: 1.875rem; //30px
+        }
+
+        .block{
+            
+            &:before{
+                content: '';
+                position: absolute;
+                width: 100%; //328px
+                height: 72%; //240px
+                background-color: $veryLightGray;
+                z-index: -1;
+                left: 0;
+                top: 2.5rem; //40px
+
+                @include breakpoint-up(large){
+                    width: 100%;
+                    height: 85%; 
+                }
+            }
+        }
+
+        h3{
+            color: $darkBlue;
+        }
+
+        p{
+            color: $darkGrayishBlue;
+            font-size: $medium;
+            padding-left: 1.0625rem; //17px
+            padding-right: 1.0625rem;
+            margin-bottom: 1.25rem; //20px
+            line-height: 2; 
+        }
+
+    }
+
+    .swiper-container-horizontal
+    >.swiper-pagination-bullets{
+        left: 0;
+        width: 100%;
+        bottom: 0.9375rem; //15px
+    }
+
+    .slider-nav span{
+        margin: 0.625rem 0 0 0; //10px
+        width: 0.5rem;
+        height: 0.5rem;
+        background: white;
+        border: solid 1px $brightRed;
+        overflow: hidden;
+        border-radius: 50%;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: $brightRed !important;
+      }
+
+    .btn__container{
+        position: relative;
+        .btn{
+
+            @include breakpoint-up(large){
+                margin: 0px auto;
+            }
+        }
+    }
+}

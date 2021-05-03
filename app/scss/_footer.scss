@@ -1,0 +1,312 @@
+.footer{
+    position: relative;
+    text-align: center;
+
+    &__action{
+        background-color: $brightRed;
+        text-align: center;
+
+        .wrapper{
+            @include breakpoint-down(medium){
+                padding-top: 6.25rem; //100px
+                padding-right: 2.125rem; //34px
+                padding-bottom: 6.25rem;
+                padding-left: 2.125rem;
+            }
+
+            @include breakpoint-up(large){
+                padding: 3rem 0rem; //48px
+                text-align: left;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+
+        h1{
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 2.125rem; //34px
+
+            @include breakpoint-up(large){
+                font-size: $xxlarge;
+                line-height: 1.15;
+                flex-basis: 30rem; //480px
+            }
+        }
+
+        .btn{
+            background-color: white;
+            color: $brightRed;
+            box-shadow: 0.0625rem 0.3125rem 0.9375rem -0.8rem $veryDarkBlue; //1px 5px 15px -5px
+            font-weight: bold;
+            width: 8.5625rem; //137px
+            transition: color 300ms ease-in-out;
+
+            &:hover{
+                color: lighten($brightRed, $amount: 20);
+            }
+        }
+
+        &:after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+    
+        @include breakpoint-down(medium){
+            -webkit-mask: url(/img/bg-simplify-section-mobile.svg);
+            mask: url(/img/bg-simplify-section-mobile.svg);
+            mask-size: 30%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            background-color: #ffefeb;
+            -webkit-mask-position: top left;
+            mask-position: top left;
+            -webkit-mask-size: 30%;
+            left: 0%;
+            top: 0%;
+        }
+    
+        @include breakpoint-up(large){  
+            -webkit-mask: url(/img/bg-simplify-section-desktop.svg);
+            mask: url(/img/bg-simplify-section-desktop.svg);
+            -webkit-mask-size: cover;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            background-color: #ffefeb;
+            -webkit-mask-position: bottom left;
+            -webkit-mask-size: 130%;
+            left: 0;
+            top: -40%;
+            }
+        }
+
+    }
+
+    &__info{
+        position: relative;
+        background-color: $veryDarkBlue;
+
+        .wrapper{
+            @include breakpoint-down(medium){
+                max-width: 69.375rem; //1110px
+                margin: 0 auto;
+                padding-right: 1.5rem; //24px
+                padding-left: 1.5rem; //24px
+            }
+
+            @include breakpoint-up(large){
+                display: grid;
+                grid-template-columns: 2fr 2fr 2fr 15rem;
+                grid-template-rows: 1fr auto;
+                grid-template-areas: 
+                "logo links1 links2 email"
+                "social links1 links2 copyright";
+                grid-gap: 1rem;
+                align-items: baseline;
+                padding: 3.5rem 0rem 0rem; //60px 70px 40px
+            }
+        
+
+            .email__box{
+                padding: 3.125rem 0px; //50px 0px
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                font-size: $small;
+                text-align: left;
+
+                @include breakpoint-down(xsmall){
+                   flex-wrap: nowrap;    
+                }
+
+                @include breakpoint-up(medium){
+                    width: 75%;
+                    transform: translateX(25%);    
+                }
+                
+                @include breakpoint-up(large){
+                    width: auto;
+                    padding: 0rem;
+                    grid-area: email;
+                    align-self: flex-start;
+                    justify-content: space-between;
+                    margin: 0;
+                    transform: none;
+                }
+
+                input[type=email]{
+                    padding: 0.875rem 1rem; //14px 16px
+                    border-radius: 1.875rem; //30px
+                    width: 67%;
+                    margin-right: 0.625rem;
+                    border: 1px solid white;
+
+                    @include breakpoint-up(large){
+                        width: 72%;  
+                    }
+
+                    &::placeholder{
+                        font-size: $small;
+                        font-family: 'Be Vietnam', sans-serif;
+                    }
+
+                    &:focus-visible{
+                        outline: none;
+                    }
+
+                }    
+
+                #text{
+                    position: absolute;
+                    opacity: 0;
+                    font-size: $small;
+                    font-style: italic;
+                    padding-left: 1rem;
+                    top: 6.25rem;
+                    left: 9%;
+
+                    @include breakpoint-up(large){
+                        position: relative;
+                        margin-top: 0.625rem; //10px
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                .bullet{
+                    padding: 0.875rem 2.1875rem; //14px 35px
+                    border: none;
+                    cursor: pointer;
+                    transition: background-color 300ms ease-in-out;
+
+                    &:hover{
+                        background-color: lighten($color: $brightRed, $amount: 10);
+                    }
+
+                    @include breakpoint-up(large){
+                        padding: 0.875rem 1.2rem; //14px 19.2px
+                    }
+                }
+            }
+        }
+        .links{
+            font-size: $medium;
+            padding-left: 1.4375rem;
+            padding-right: 1.4375rem;
+            text-align: left;
+            }
+
+        .col1{
+            display: inline-block;
+            width: 50%;
+
+            @include breakpoint-up(medium){
+                width: auto;
+            }
+            @include breakpoint-up(large){
+                width: 100%;   
+                grid-area: links1;
+                align-self: flex-start;
+            }
+        }
+
+        .col2{
+            display: inline-block;
+            @include breakpoint-up(large){
+                grid-area: links2;
+            }
+        }
+
+        li{
+            margin-bottom: 1.5rem; //24px
+            transition: color 300ms ease-in-out;
+
+            @include breakpoint-up(large){
+                margin-bottom: 1.375rem; //22px
+                }
+
+            &:hover{
+                color: $brightRed;
+            }
+        }
+
+        .logo-inv{
+            padding-bottom: 60px;
+            margin: 0 auto;
+            display: block;
+            position: relative;
+
+            @include breakpoint-up(large){
+                grid-area: logo;
+                padding: 0rem;
+                width: 9.125rem; //146px
+                height: auto;
+                margin: 0rem;
+                align-self: flex-start;
+            }
+        }
+
+        p{
+            margin-bottom: 0rem;
+            padding-bottom: 1.875rem; //30px
+            font-size: $medium;
+            color: $darkGrayishBlue;
+            align-self: center;
+
+            @include breakpoint-up(large){
+                grid-area: copyright;
+                text-align: right;
+                font-size: $small;
+            }
+        }
+
+    }
+
+    &__social{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 2.25rem; //36px
+        margin-bottom: 3.125rem; //50px
+        
+        @include breakpoint-up(large){
+            grid-area: social;
+            justify-content: flex-start;
+            align-self: center;
+        }
+
+        a{ 
+            &:not(:last-child){
+                margin-right: 2rem; //32px
+                
+                @include breakpoint-up(large){
+                    margin-right: 0.8125rem; //13px
+                }
+            }
+
+            svg{
+                width: 32px; //32px
+                height: 32px;
+                fill: white;
+                transition: fill 300ms ease-in-out;
+                
+                &:hover{
+                    fill: $brightRed;
+                    }
+
+                @include breakpoint-up(large){
+                    width: 1.25rem; //20px
+                    height: auto;
+                    }  
+                
+                }
+            }    
+        }
+    
+}

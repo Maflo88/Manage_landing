@@ -1,0 +1,30 @@
+h1, h2, h3 {
+    font-family: 'Be Vietnam', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 {
+    font-size: calc(1.875rem + 1.5vw); //30px + 1.5vw
+    color: $darkBlue;
+  }
+  
+  h2{
+    font-size: 2rem; //36px
+  }
+  
+  h3{
+    font-size: 1rem;
+  }
+
+  p{
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+  }
+  
+  a, a:visited, a:hover{
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,113 @@
+.header{
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+
+  //open hamburger menu
+  &.open{
+
+      .header__toggle{
+      >span:nth-child(1){
+        transform: translateY(9px) rotate(135deg);
+      }
+      >span:nth-child(2){
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      >span:nth-child(3){
+        transform: translateY(-9px) rotate(-135deg);
+      }
+    }
+  }
+
+  .logo{
+    align-self: flex-end;
+  }
+      
+  .overlay{
+    position: fixed;
+    opacity: 0;
+    left:0;
+    top: 0;
+    bottom: 0;
+    right:0;
+    background-image: linear-gradient(transparent, $veryDarkBlue);
+  }    
+
+  &__toggle{
+    align-self: baseline;
+
+    > span{
+      display: block;
+      width: 1.5625rem; //25px
+      height: 0.25rem; //4px
+      background-color: $darkBlue;
+      transform: rotate(0deg);
+      transition: .4s ease-in-out;
+      transform-origin: 0.9375rem; //15px
+
+    }
+    :not(:last-child){
+      margin-bottom: 0.1875rem; //3px
+    }
+
+}
+
+  nav{
+    position: relative;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: transparent;
+
+    logo{
+      width: 6.9375rem; //111px
+      height: 1.25rem; //20px
+    }
+  }
+
+  &__mobile{
+    position: absolute;
+    width: calc(100% - 2.5rem);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: white;
+    margin-top: -0.25rem; //-4px
+    padding: 2.5rem; //40px
+    border-radius: 0.3125rem;
+    box-shadow: 0.0625rem 0.125rem 0.9375rem 0.0313rem hsla(227, 12%, 61%, 0.25);
+
+    a{
+      display: block;
+      color: $veryDarkBlue;
+      padding: 0.9375rem;
+      font-size: $large;
+      text-align: center;
+    }
+  }
+
+  &__desktop{
+
+    a{
+      position: relative;
+      font-size: $small;
+      color: $veryDarkBlue;
+      transition: color 300ms ease-in-out;
+
+
+      &:not(:last-child){
+        margin-right: 33px;
+      }
+
+      &:hover{
+        color: $darkGrayishBlue;
+      }
+    }
+  }
+
+  .has-fade{
+    visibility: hidden;
+  }
+}
+
+
