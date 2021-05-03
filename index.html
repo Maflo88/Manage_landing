@@ -13,7 +13,7 @@
     
     <link rel="stylesheet" href="/dist/style.css">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
   <title>Frontend Mentor | Manage landing page</title>
 
@@ -34,7 +34,7 @@
     <nav class="container container--pall flex flex-jc-sb flex-ai-c">
 
       <a href="#" class="logo">
-        <img src="/img/logo.svg">
+        <img alt="manage logo" src="/img/logo.svg">
       </a>
 
       <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
@@ -218,7 +218,7 @@
       <div class="wrapper container container--px">
 
         <form id="form" action="#" class="email__box" onsubmit="return validateForm()">
-            <input id="email" type="email" placeholder="Updates in your inbox..." 
+            <input id="email" type="email" title="email box" placeholder="Updates in your inbox..." 
             onkeyup="validation()"/>
             <input class="bullet" type="submit" name="submit" value="Go"/>
             <span id="text">Void</span>
