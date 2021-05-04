@@ -200,19 +200,6 @@
             padding-left: 1.4375rem;
             padding-right: 1.4375rem;
             text-align: left;
-            
-            a{
-                margin-bottom: 1.5rem; //24px
-                transition: color 300ms ease-in-out;
-
-                @include breakpoint-up(large){
-                    margin-bottom: 1.375rem; //22px
-                    }
-
-                &:hover{
-                    color: $brightRed;
-                }
-            }
         }
 
         .col1{
@@ -235,6 +222,19 @@
                 grid-area: links2;
             }
         }
+        
+        li{
+                margin-bottom: 1.5rem; //24px
+                transition: color 300ms ease-in-out;
+
+                @include breakpoint-up(large){
+                    margin-bottom: 1.375rem; //22px
+                    }
+
+                &:hover{
+                    color: $brightRed;
+                }
+         }
 
         .logo-inv{
             padding-bottom: 60px;
