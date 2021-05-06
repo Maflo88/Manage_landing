@@ -56,11 +56,17 @@
             line-height: 1.75;
             margin-bottom: 2.5rem; //40px
 
+             @include breakpoint-up(medium){
+                margin: 0px auto 2.875rem; //46px
+                width: 75%;
+            }
+
             @include breakpoint-up(large){
                 text-align: left;
                 font-size: $standar;
                 //margin-right: 9.3125rem; //149px
                 width: 66%;
+                margin-left: 0px;
                 margin-bottom: 2.875rem; //46px
                }
         }
